@@ -1,17 +1,15 @@
 package unesp.rc.creditloan.domain;
 
 import unesp.rc.creditloan.domain.enums.CivilStatus;
-
-import javax.persistence.Entity;
 import java.util.Date;
 
-@Entity
 public class User {
 
     private String name;
     private Date birthdate;
     private String cpf;
     private String password;
+    private int age;
     private CivilStatus civilStatus;
     private int amountOfProperty;
     private double creditLimit;
@@ -46,6 +44,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public CivilStatus getCivilStatus() {
