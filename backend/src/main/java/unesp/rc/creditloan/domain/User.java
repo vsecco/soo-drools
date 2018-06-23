@@ -1,6 +1,8 @@
 package unesp.rc.creditloan.domain;
 
 import unesp.rc.creditloan.domain.enums.CivilStatus;
+
+import java.util.Calendar;
 import java.util.Date;
 
 public class User {
@@ -46,14 +48,6 @@ public class User {
         this.password = password;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public CivilStatus getCivilStatus() {
         return civilStatus;
     }
@@ -76,5 +70,17 @@ public class User {
 
     public void setCreditLimit(double creditLimit) {
         this.creditLimit = creditLimit;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        Calendar today = Calendar.getInstance();
+        Calendar dayOfBirth = Calendar.getInstance();
+        dayOfBirth.setTime(this.birthdate);
+
+        return today.get(Calendar.YEAR) - dayOfBirth.get(Calendar.YEAR);
     }
 }
