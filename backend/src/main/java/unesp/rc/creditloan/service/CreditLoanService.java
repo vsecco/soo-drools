@@ -1,35 +1,25 @@
 package unesp.rc.creditloan.service;
 
-import org.kie.api.KieServices;
-import org.kie.api.runtime.KieContainer;
-import org.kie.api.runtime.KieSession;
-import org.kie.api.runtime.rule.FactHandle;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import unesp.rc.creditloan.domain.User;
 import unesp.rc.creditloan.domain.enums.CivilStatus;
 
-import java.util.Date;
-
 @Service
 public class CreditLoanService {
 
+    @Autowired
+    RuleEngineService ruleEngineService;
+
     public Double createCreditLoan() {
         User diane = new User();
+        diane.setAmountOfProperty(1000);
+        diane.setCivilStatus(CivilStatus.MARRIED);
+        diane.setAge(24);
+        diane.setCpf("456789567");
+
         try {
-            KieServices ks = KieServices.Factory.get();
-            KieContainer kContainer = ks.getKieClasspathContainer();
-            KieSession kSession = kContainer.newKieSession("ksession-rule");
-
-            FactHandle fact1;
-            diane.setAmountOfProperty(150000);
-            diane.setCivilStatus(CivilStatus.MARRIED);
-            diane.setAge(24);
-            diane.setCpf("456789567");
-
-            fact1 = kSession.insert(diane);
-            kSession.fireAllRules();
-
-
+            ruleEngineService.fireAllRules(diane);
         } catch (Throwable t) {
             t.printStackTrace();
         }
