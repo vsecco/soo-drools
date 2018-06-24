@@ -1,7 +1,6 @@
-package unesp.rc.creditloan.controller;
+package unesp.rc.creditloan.controller.unsecured;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,16 +11,15 @@ import unesp.rc.creditloan.service.UserService;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/public/user")
+public class UserUnsecuredController {
 
     @Autowired
     private UserService userService;
 
-
-    @PreAuthorize("hasAnyRole('ROLE_USER')")
-    @RequestMapping(method = RequestMethod.PUT, path = "/update")
-    public void updateUser(@RequestBody @Valid final User user) {
-        this.userService.updateUser(user);
+    @RequestMapping(method = RequestMethod.POST, path = "/new")
+    public void createUser(@RequestBody @Valid final User user) {
+        this.userService.createUser(user);
     }
+
 }

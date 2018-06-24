@@ -15,15 +15,17 @@ public class AuditService {
     @Autowired
     public AuditRepository auditRepository;
 
+    @Autowired
+    public UserService userService;
+
     public List<Audit> getAudit() {
-        // TODO: pegar o logged user da memória
-        User loggedUser = new User();
+        User loggedUser = userService.getLoggedUser();
 
         return this.auditRepository.findByUser(loggedUser);
     }
 
-    public void createAudit(CreditLoan creditLoan, User loggedUser) {
-        // TODO: pegar o logged user da memória e remover do parametro do metodo
+    public void createAudit(CreditLoan creditLoan) {
+        User loggedUser = userService.getLoggedUser();
 
         Audit audit = new Audit();
 

@@ -39,6 +39,15 @@ public class GlobalControllerExceptionHandler {
                 .body(new GeneralExceptionObject(HttpStatus.CONFLICT.value(),
                         HttpStatus.CONFLICT.getReasonPhrase(), messages));
     }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity badRequestException(final BadRequestException e) {
+        final Set<String> messages = new HashSet<String>();
+        messages.add(e.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new GeneralExceptionObject(HttpStatus.BAD_REQUEST.value(),
+                        HttpStatus.BAD_REQUEST.getReasonPhrase(), messages));
+    }
 }
 
 
