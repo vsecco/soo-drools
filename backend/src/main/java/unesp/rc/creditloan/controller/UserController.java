@@ -22,7 +22,7 @@ public class UserController {
         this.userService.createUser(user);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, path = "/update/{userId}")
+    @RequestMapping(method = RequestMethod.PUT, path = "/update")
     public void updateUser(@RequestBody @Valid final User user) {
         this.userService.updateUser(user);
     }

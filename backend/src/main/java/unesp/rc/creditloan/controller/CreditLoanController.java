@@ -1,11 +1,14 @@
 package unesp.rc.creditloan.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import unesp.rc.creditloan.domain.Audit;
+import unesp.rc.creditloan.domain.CreditLoan;
+import unesp.rc.creditloan.domain.User;
 import unesp.rc.creditloan.service.CreditLoanService;
 
 import javax.validation.Valid;
@@ -19,12 +22,7 @@ public class CreditLoanController {
     private CreditLoanService creditLoanService;
 
     @RequestMapping(method = RequestMethod.POST, path = "/new")
-    public Double createCreditLoan() {
-        return this.creditLoanService.createCreditLoan();
-    }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/audit/{userId}")
-    public List<Audit> getAudit(@RequestParam @Valid final int userId) {
-        return this.creditLoanService.getAudit(userId);
+    public void createCreditLoan() {
+        this.creditLoanService.createCreditLoan();
     }
 }
