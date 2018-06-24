@@ -2,10 +2,7 @@ package unesp.rc.creditloan.domain;
 
 import unesp.rc.creditloan.domain.enums.CivilStatus;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -21,6 +18,8 @@ public class User {
     private String password;
     private CivilStatus civilStatus;
     private int amountOfProperty;
+
+    @Transient
     private double creditLimit;
 
     public Long getId() {
