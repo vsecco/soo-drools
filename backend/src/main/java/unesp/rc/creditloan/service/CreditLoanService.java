@@ -1,11 +1,9 @@
 package unesp.rc.creditloan.service;
 
-import org.apache.commons.lang.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import unesp.rc.creditloan.domain.CreditLoan;
 import unesp.rc.creditloan.domain.User;
-import unesp.rc.creditloan.domain.enums.CivilStatus;
 import unesp.rc.creditloan.repository.CreditLoanRepository;
 
 import java.util.Date;

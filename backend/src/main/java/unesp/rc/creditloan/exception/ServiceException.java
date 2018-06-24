@@ -10,7 +10,7 @@ public class ServiceException extends RuntimeException {
 
     public static final String GENERIC_MESSAGE = "Parâmetros obrigatórios não informados ou mesmo com formato inválido.";
 
-    private final Map<String, String> messages = new HashMap<String, String>();
+    private final Map<String, String> messages = new HashMap<>();
     private final HttpStatus httpStatus;
 
     public ServiceException() {
