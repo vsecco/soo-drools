@@ -17,12 +17,16 @@ public class CreditLoanService {
     RuleEngineService ruleEngineService;
 
     @Autowired
+    AuditService auditService;
+
+    @Autowired
     CreditLoanRepository creditLoanRepository;
 
     public void createCreditLoan() {
         // TODO: pegar usuário salvo na memória
         User loggedUser = new User();
         loggedUser.setId(1L);
+        loggedUser.setName("name");
         loggedUser.setAmountOfProperty(1000);
         loggedUser.setCivilStatus(CivilStatus.MARRIED);
         loggedUser.setBirthdate(DateUtils.addYears(new Date(), -24));
@@ -39,5 +43,7 @@ public class CreditLoanService {
         creditLoan.setCreditLimit(loggedUser.getCreditLimit());
         creditLoan.setUser(loggedUser);
         this.creditLoanRepository.save(creditLoan);
+
+        this.auditService.createAudit(creditLoan, loggedUser);
     }
 }
