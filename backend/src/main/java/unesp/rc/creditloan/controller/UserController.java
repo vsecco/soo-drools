@@ -11,6 +11,10 @@ import unesp.rc.creditloan.service.UserService;
 
 import javax.validation.Valid;
 
+
+/**
+ * Classe que contém os endpoints dos serviços referentes a usuário
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -18,7 +22,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
+    /**
+     * Endpoint que realiza a atualização dos dados do usuário logado
+     * @param user
+     */
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     @RequestMapping(method = RequestMethod.PUT, path = "/update")
     public void updateUser(@RequestBody @Valid final User user) {

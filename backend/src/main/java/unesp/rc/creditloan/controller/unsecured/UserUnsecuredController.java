@@ -10,6 +10,9 @@ import unesp.rc.creditloan.service.UserService;
 
 import javax.validation.Valid;
 
+/**
+ * Classe que contém os endpoints dos serviços públicos referentes a usuários
+ */
 @RestController
 @RequestMapping("/public/user")
 public class UserUnsecuredController {
@@ -17,6 +20,10 @@ public class UserUnsecuredController {
     @Autowired
     private UserService userService;
 
+    /**
+     * Endpoint que realiza a criação de um novo usuário
+     * @param user
+     */
     @RequestMapping(method = RequestMethod.POST, path = "/new")
     public void createUser(@RequestBody @Valid final User user) {
         this.userService.createUser(user);

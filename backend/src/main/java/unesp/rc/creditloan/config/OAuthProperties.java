@@ -5,9 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(
-        prefix = "oauth"
-)
+@ConfigurationProperties(prefix = "oauth")
 public class OAuthProperties {
     private String resourceId;
     private String test;

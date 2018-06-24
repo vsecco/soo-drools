@@ -5,6 +5,9 @@ import unesp.rc.creditloan.domain.enums.CivilStatus;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Entidade Audit para persistência de histórico de limite de crédito no Banco de dados
+ */
 @Entity
 public class Audit {
 

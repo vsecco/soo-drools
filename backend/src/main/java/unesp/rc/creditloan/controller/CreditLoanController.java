@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import unesp.rc.creditloan.service.CreditLoanService;
 
+/**
+ * Classe que contém os endpoints dos serviços referentes a limite de crédito
+ */
 @RestController
 @RequestMapping("/creditloan")
 public class CreditLoanController {
@@ -14,6 +17,10 @@ public class CreditLoanController {
     @Autowired
     private CreditLoanService creditLoanService;
 
+    /**
+     * Endpoint que realiza a criação de uma nova solicitação de limite de crédito
+     * para o usuário logado
+     */
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     @RequestMapping(method = RequestMethod.POST, path = "/new")
     public void createCreditLoan() {

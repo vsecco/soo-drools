@@ -17,25 +17,19 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfigurer extends AuthorizationServerConfigurerAdapter {
-    @Autowired(
-            required = false
-    )
+    @Autowired(required = false)
     private TokenStore tokenStore;
-    @Autowired(
-            required = false
-    )
+
+    @Autowired(required = false)
     private DataSource dataSource;
-    @Autowired(
-            required = false
-    )
+
+    @Autowired(required = false)
     private AuthenticationManager authenticationManager;
-    @Autowired(
-            required = false
-    )
+
+    @Autowired(required = false)
     private UserDetailsService userDetailsService;
-    @Autowired(
-            required = false
-    )
+
+    @Autowired(required = false)
     private ClientDetailsService clientDetailsService;
 
     public AuthorizationServerConfigurer() {

@@ -17,24 +17,18 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableResourceServer
-@EnableGlobalMethodSecurity(
-        prePostEnabled = true
-)
-
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ResourceServerConfigurer extends ResourceServerConfigurerAdapter {
     @Autowired
     OAuthProperties oAuthProperties;
-    @Autowired(
-            required = false
-    )
+
+    @Autowired(required = false)
     private TokenStore tokenStore;
-    @Autowired(
-            required = false
-    )
+
+    @Autowired(required = false)
     private DataSource dataSource;
-    @Autowired(
-            required = false
-    )
+
+    @Autowired(required = false)
     private UserDetailsService userDetailsService;
 
     public ResourceServerConfigurer() {
@@ -65,6 +59,5 @@ public class ResourceServerConfigurer extends ResourceServerConfigurerAdapter {
         } else {
             ((AuthorizedUrl)((AuthorizedUrl)http.authorizeRequests().antMatchers(this.oAuthProperties.getAllowedUrls())).permitAll().anyRequest()).authenticated();
         }
-
     }
 }

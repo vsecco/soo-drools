@@ -16,17 +16,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @ConditionalOnBean({UserDetailsService.class})
 @EnableWebSecurity
 public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
-    @Autowired(
-            required = false
-    )
+    @Autowired(required = false)
     private UserDetailsService userDetailsService;
 
     public WebSecurityConfigurer() {
     }
 
-    @Bean(
-            name = {"authenticationManager"}
-    )
+    @Bean(name = {"authenticationManager"})
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }

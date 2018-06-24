@@ -4,6 +4,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+/**
+ * Entidade CreditLoan para persistência de limite de crédito no Banco de dados
+ */
 @Entity
 public class CreditLoan {
 

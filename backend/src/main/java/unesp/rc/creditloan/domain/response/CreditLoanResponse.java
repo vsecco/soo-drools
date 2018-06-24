@@ -5,6 +5,9 @@ import unesp.rc.creditloan.domain.enums.CivilStatus;
 
 import java.util.Date;
 
+/**
+ * Entidade CreditLoanResponse para armazenar os dados de limite de crédito para retorno do serviço
+ */
 public class CreditLoanResponse {
     private Long id;
 

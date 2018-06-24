@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Entidade AuditResponse para armazenar os dados de histórico para retorno do serviço
+ */
 public class AuditResponse {
     private String name;
 
