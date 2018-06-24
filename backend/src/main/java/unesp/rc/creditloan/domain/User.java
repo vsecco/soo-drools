@@ -11,7 +11,6 @@ public class User {
     private Date birthdate;
     private String cpf;
     private String password;
-    private int age;
     private CivilStatus civilStatus;
     private int amountOfProperty;
     private double creditLimit;
@@ -70,10 +69,6 @@ public class User {
 
     public void setCreditLimit(double creditLimit) {
         this.creditLimit = creditLimit;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public int getAge() {

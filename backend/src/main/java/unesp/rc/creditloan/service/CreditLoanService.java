@@ -1,5 +1,6 @@
 package unesp.rc.creditloan.service;
 
+import org.apache.commons.lang.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import unesp.rc.creditloan.domain.Audit;
@@ -7,6 +8,7 @@ import unesp.rc.creditloan.domain.User;
 import unesp.rc.creditloan.domain.enums.CivilStatus;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -20,7 +22,7 @@ public class CreditLoanService {
         User user = new User();
         user.setAmountOfProperty(1000);
         user.setCivilStatus(CivilStatus.MARRIED);
-        user.setAge(24);
+        user.setBirthdate(DateUtils.addYears(new Date(), -24));
         user.setCpf("456789567");
 
         try {
