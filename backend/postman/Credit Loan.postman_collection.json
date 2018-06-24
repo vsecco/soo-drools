@@ -1,0 +1,155 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Credit Loan",
+		"_postman_id": "36506186-2988-0561-0279-1f9e018a4118",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE NEW CREDIT LOAN",
+			"request": {
+				"url": "http://localhost:8080/creditloan/new",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{bearerToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE USER",
+			"request": {
+				"url": "http://localhost:8080/public/user/new",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Larissa R R\"\n\t,\"cpf\": \"123456789\"\n\t,\"birthdate\": \"2017-04-01\"\n\t,\"amountOfProperty\": 1000\n\t,\"civilStatus\": \"MARRIED\"\n\t,\"password\": \"BLA\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE USER",
+			"request": {
+				"url": "http://localhost:8080/user/update",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "{{bearerToken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Larissa R R\"\n\t,\"cpf\": \"12345678\"\n\t,\"birthdate\": \"1994-04-02\"\n\t,\"amountOfProperty\": 1000\n\t,\"civilStatus\": \"MARRIED\"\n\t,\"password\": \"BLA\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET AUDIT",
+			"request": {
+				"url": "http://localhost:8080/audit/list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "{{bearerToken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Larissa R R\"\n\t,\"cpf\": \"123456\"\n\t,\"birthdate\": \"1994-05-26\"\n\t,\"amountOfProperty\": 1000\n\t,\"civilStatus\": \"MARRIED\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "USER AUTHENTICATION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+							"postman.setGlobalVariable(\"bearerToken\",\"Bearer \" + jsonData.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/oauth/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Y3JlZGl0LWxvYW46c2VjcmV0",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "12345678",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "BLA",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
