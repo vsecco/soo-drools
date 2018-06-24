@@ -8,8 +8,6 @@ import unesp.rc.creditloan.exception.ConflictException;
 import unesp.rc.creditloan.exception.NotFoundException;
 import unesp.rc.creditloan.repository.UserRepository;
 
-import java.util.Objects;
-
 @Service
 public class UserService {
 

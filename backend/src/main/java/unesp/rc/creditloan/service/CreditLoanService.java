@@ -29,8 +29,8 @@ public class CreditLoanService {
 
         try {
             ruleEngineService.fireAllRules(loggedUser);
-        } catch (Throwable t) {
-            t.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         CreditLoan creditLoan = new CreditLoan();

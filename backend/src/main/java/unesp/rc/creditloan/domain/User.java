@@ -1,5 +1,6 @@
 package unesp.rc.creditloan.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import unesp.rc.creditloan.domain.enums.CivilStatus;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class User {
     private String name;
 
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone="America/Sao_Paulo")
     private Date birthdate;
 
     @NotNull
