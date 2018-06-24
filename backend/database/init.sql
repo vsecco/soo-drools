@@ -31,4 +31,5 @@ CREATE TABLE credit_loan_db.audit(
   ,PRIMARY KEY (id)
   ,FOREIGN KEY (user_id) REFERENCES user(id)
   ,FOREIGN KEY (credit_loan_id) REFERENCES credit_loan(id)
+  ,UNIQUE (credit_loan_id)
 );

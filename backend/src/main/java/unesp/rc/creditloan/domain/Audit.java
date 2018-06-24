@@ -15,7 +15,7 @@ public class Audit {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     private CreditLoan creditLoan;
 
     @NotNull
