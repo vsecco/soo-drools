@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS credit_loan_db ;
+CREATE DATABASE IF NOT EXISTS db_credit_loan;
 
-CREATE TABLE credit_loan_db.user(
+CREATE TABLE db_credit_loan.user(
    id int NOT NULL AUTO_INCREMENT
   ,cpf VARCHAR(11) NOT NULL
   ,password VARCHAR(100) NOT NULL
@@ -12,7 +12,7 @@ CREATE TABLE credit_loan_db.user(
   ,CONSTRAINT chk_civil_state CHECK (civil_state IN ('SINGLE', 'MARRIED', 'DIVORCED', 'WIDOWER'))
 );
 
-CREATE TABLE credit_loan_db.credit_loan(
+CREATE TABLE db_credit_loan.credit_loan(
    id int NOT NULL AUTO_INCREMENT
   ,date DATE NOT NULL
   ,credit_limit INT NOT NULL
@@ -21,7 +21,7 @@ CREATE TABLE credit_loan_db.credit_loan(
   ,FOREIGN KEY (id_user) REFERENCES user(id)
 );
 
-CREATE TABLE credit_loan_db.audit(
+CREATE TABLE db_credit_loan.audit(
    id int NOT NULL AUTO_INCREMENT
   ,name VARCHAR(100) NOT NULL
   ,civil_state VARCHAR(8) NOT NULL

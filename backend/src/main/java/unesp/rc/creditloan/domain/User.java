@@ -2,11 +2,19 @@ package unesp.rc.creditloan.domain;
 
 import unesp.rc.creditloan.domain.enums.CivilStatus;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Calendar;
 import java.util.Date;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private Date birthdate;
     private String cpf;
@@ -14,6 +22,14 @@ public class User {
     private CivilStatus civilStatus;
     private int amountOfProperty;
     private double creditLimit;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
