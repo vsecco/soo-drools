@@ -22,6 +22,7 @@ public class CreditLoanService {
     public void createCreditLoan() {
         // TODO: pegar usuário salvo na memória
         User loggedUser = new User();
+        loggedUser.setId(1L);
         loggedUser.setAmountOfProperty(1000);
         loggedUser.setCivilStatus(CivilStatus.MARRIED);
         loggedUser.setBirthdate(DateUtils.addYears(new Date(), -24));
