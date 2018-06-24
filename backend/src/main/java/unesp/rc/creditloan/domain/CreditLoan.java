@@ -1,11 +1,32 @@
 package unesp.rc.creditloan.domain;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Entity
 public class CreditLoan {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotNull
     private Date date;
+
+    @NotNull
     private double creditLimit;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Date getDate() {
         return date;

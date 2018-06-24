@@ -1,12 +1,14 @@
 package unesp.rc.creditloan.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import unesp.rc.creditloan.domain.Audit;
 import unesp.rc.creditloan.domain.User;
 import unesp.rc.creditloan.repository.AuditRepository;
 
 import java.util.List;
 
+@Service
 public class AuditService {
 
     @Autowired
