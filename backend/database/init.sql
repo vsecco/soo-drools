@@ -36,4 +36,4 @@ CREATE TABLE credit_loan_db.audit(
   ,UNIQUE (credit_loan_id)
 );
 
-GRANT INSERT,UPDATE,DELETE,SELECT ON credit_loan_db.* to 'credit-loan-api'@'localhost';
+GRANT INSERT,UPDATE,DELETE,SELECT,CREATE ON credit_loan_db.* to 'credit-loan-api'@'localhost';
