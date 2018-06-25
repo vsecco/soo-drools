@@ -1,5 +1,7 @@
 CREATE DATABASE IF NOT EXISTS credit_loan_db;
 
+CREATE USER IF NOT EXISTS 'credit-loan-api'@'localhost' identified by 'pass';
+
 CREATE TABLE credit_loan_db.user(
    id int NOT NULL AUTO_INCREMENT
   ,cpf VARCHAR(11) NOT NULL
@@ -33,3 +35,5 @@ CREATE TABLE credit_loan_db.audit(
   ,FOREIGN KEY (credit_loan_id) REFERENCES credit_loan(id)
   ,UNIQUE (credit_loan_id)
 );
+
+GRANT INSERT,UPDATE,DELETE,SELECT ON credit_loan_db.* to 'credit-loan-api'@'localhost';
