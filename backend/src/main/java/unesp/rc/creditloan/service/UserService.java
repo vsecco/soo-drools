@@ -13,6 +13,9 @@ import unesp.rc.creditloan.exception.NotFoundException;
 import unesp.rc.creditloan.repository.UserRepository;
 import unesp.rc.creditloan.utils.StringEncoder;
 
+/**
+ * Serviço que contém os métodos referente a usuário
+ */
 @Service
 public class UserService {
 

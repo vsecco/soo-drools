@@ -5,6 +5,10 @@ import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.stereotype.Service;
 
+/**
+ * Serviço que contém as configurações para disparar a execução das regras de negócio
+ * referente a um objeto
+ */
 @Service
 public class RuleEngineService {
 

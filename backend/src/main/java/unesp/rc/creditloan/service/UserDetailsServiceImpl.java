@@ -10,6 +10,9 @@ import unesp.rc.creditloan.domain.CustomPrincipal;
 import unesp.rc.creditloan.domain.User;
 import unesp.rc.creditloan.repository.UserRepository;
 
+/**
+ * Serviço que implementa a interface UserDetailsService do Spring Security
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

@@ -1,5 +1,9 @@
 package unesp.rc.creditloan.utils;
 
+/**
+ * Classe que contém os utilitários do cálculo do limite de crédito utilizado
+ * na regra de negócio
+ */
 public class CreditLoanUtil {
 
     public static boolean numberIsBetween(int number, int begin, int end) {

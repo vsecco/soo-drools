@@ -5,6 +5,9 @@ import org.springframework.http.HttpStatus;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Classe de exceção utilizada para disparar exceções dos serviços
+ */
 public class ServiceException extends RuntimeException {
 
 
