@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Serviço que contém os métodos referente a histórico de limite de crédito
+ */
 @Service
 public class AuditService {
 

@@ -5,6 +5,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Objects;
 
+/**
+ * Classe para codificação da senha do usuário
+ */
 public class StringEncoder {
 
     private static final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

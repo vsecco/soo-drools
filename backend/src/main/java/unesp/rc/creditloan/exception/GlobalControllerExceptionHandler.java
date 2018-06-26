@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Classe que intercepta as exceções e configura a entidade de retorno dos serviços em caso de erro
+ */
 @ControllerAdvice
 public class GlobalControllerExceptionHandler {
 

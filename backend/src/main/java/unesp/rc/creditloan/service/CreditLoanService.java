@@ -8,6 +8,9 @@ import unesp.rc.creditloan.repository.CreditLoanRepository;
 
 import java.util.Date;
 
+/**
+ * Serviço que contém os métodos referente a limite de crédito
+ */
 @Service
 public class CreditLoanService {
 

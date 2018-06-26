@@ -2,6 +2,9 @@ package unesp.rc.creditloan.exception;
 
 import java.util.Set;
 
+/**
+ * Entidade para armazenar um objeto com os dados da exceção
+ */
 public class GeneralExceptionObject {
 
     private Integer status;
