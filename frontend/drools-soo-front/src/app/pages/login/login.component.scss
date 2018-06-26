@@ -1,0 +1,56 @@
+.main-container {
+    background: url('/../assets/images/credito.jpg') center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+}
+
+.align-horizontal {
+    justify-content: center;
+}
+
+.div-left {
+    justify-content: center;
+}
+
+.div-right {
+    padding: 00px;
+}
+
+img {
+    height: 200px;
+}
+
+.div-form {
+    margin-left: 6vw;
+    padding-top: 20vh;
+    width: 290px;
+}
+
+.btn-login{
+    margin-left: 6vw;
+    background-color: #c4e8e7;
+    border-radius: .3em;
+    color: #fff;
+    font-size: .68rem;
+    font-weight: bold;
+    height: 43px;
+    letter-spacing: .056rem;
+    width: 290px;
+    margin-bottom: 2vh;
+}
+
+.div-explained {
+    margin: 30vh 35vw 30vh 7vw;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cadastrar {
+    margin-left: 6vw;
+    cursor: pointer;
+}

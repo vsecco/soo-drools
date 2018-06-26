@@ -8,6 +8,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  public credentials = {
+    login: '',
+    password: '',
+  };
+  public cadastre: boolean;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -15,6 +21,14 @@ export class LoginComponent implements OnInit {
 
   public login() {
     this.router.navigate(['home']);
+  }
+
+  public Cadastre() {
+    return this.cadastre;
+  }
+
+  public mostrarCadastre() {
+    this.cadastre = !this.cadastre;
   }
 
 }
