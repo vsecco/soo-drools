@@ -13,7 +13,7 @@ public class GlobalControllerExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
     public ResponseEntity defaultErrorHandler(final Exception e) {
-        final Set<String> messages = new HashSet<String>();
+        final Set<String> messages = new HashSet<>();
         messages.add(e.getMessage());
 
 
@@ -24,7 +24,7 @@ public class GlobalControllerExceptionHandler {
 
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity notFoundException(final NotFoundException e) {
-        final Set<String> messages = new HashSet<String>();
+        final Set<String> messages = new HashSet<>();
         messages.add(e.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body(new GeneralExceptionObject(HttpStatus.NOT_FOUND.value(),
@@ -33,11 +33,20 @@ public class GlobalControllerExceptionHandler {
 
     @ExceptionHandler(ConflictException.class)
     public ResponseEntity conflictException(final ConflictException e) {
-        final Set<String> messages = new HashSet<String>();
+        final Set<String> messages = new HashSet<>();
         messages.add(e.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(new GeneralExceptionObject(HttpStatus.CONFLICT.value(),
                         HttpStatus.CONFLICT.getReasonPhrase(), messages));
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity badRequestException(final BadRequestException e) {
+        final Set<String> messages = new HashSet<>();
+        messages.add(e.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new GeneralExceptionObject(HttpStatus.BAD_REQUEST.value(),
+                        HttpStatus.BAD_REQUEST.getReasonPhrase(), messages));
     }
 }
 

@@ -8,6 +8,9 @@ import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Entidade User para persistência de histórico de usuário no Banco de dados
+ */
 @Entity
 public class User {
 
