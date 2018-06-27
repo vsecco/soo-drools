@@ -42,9 +42,9 @@ export class LoginComponent implements OnInit {
     this.crudService.registerUser(this.register).then(() => {
       this.credentials.Login = this.register.Cpf;
       this.credentials.Password = this.register.Password;
-      this.crudService.newCreditLoan().then(() => {
-        this.loginService.LoginUser(this.credentials).then((token) => {
-          sessionStorage.setItem('tokenDrools', token);
+      this.loginService.LoginUser(this.credentials).then((token) => {
+        sessionStorage.setItem('tokenDrools', token);
+        this.crudService.newCreditLoan().then(() => {
           this.router.navigate(['home']);
         });
       });
