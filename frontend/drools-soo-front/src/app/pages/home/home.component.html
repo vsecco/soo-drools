@@ -3,14 +3,13 @@
   <div class="col-2"></div>
   <div class="col-8">
     <div class="title-home">Veja seus orçamentos à seguir!</div>
-    <div class="card text-white mb-3 card-color" >
-        <div *ngFor="let budget of listOfBudgets;" class="card-header">Orçamento do dia: {{budget.date}}
-            <div class="card-body">
+    <div *ngFor="let budget of listOfBudgets;" class="card text-white mb-3 card-color" >
+        <div class="card-header">Orçamento do dia: {{budget.date}}</div>
+        <div class="card-body">
             <h5 class="card-title">Limite de crédito: R${{budget.creditLimit}}</h5>
             <h5 class="card-title text-right">Sua situaçao na época:</h5>
             <p class="card-text text-right">Estado civíl: {{budget.civilStatus}}</p>
             <p class="card-text text-right">Total de bens: R${{budget.amountOfProperty}}</p>
-            </div>
         </div>
     </div>
     <div class="title-home">Faça um novo orçamento!</div>
