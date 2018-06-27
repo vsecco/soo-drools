@@ -16,11 +16,11 @@ export class RegisterModel {
         this.cpf = value;
     }
 
-    private bithday: string;
-    public get Bithday(): string {
+    private bithday: Date;
+    public get Bithday(): Date {
         return this.bithday;
     }
-    public set Bithday(value: string) {
+    public set Bithday(value: Date) {
         this.bithday = value;
     }
 
