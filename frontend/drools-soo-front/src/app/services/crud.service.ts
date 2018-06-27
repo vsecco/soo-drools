@@ -53,7 +53,7 @@ export class CrudService {
       let headers = new HttpHeaders();
       headers = headers.set('Authorization', 'Bearer ' + sessionStorage.getItem('tokenDrools'));
 
-      this.http.post<any>(this.newCreditLoanUrl, { headers }).subscribe(() => {
+      this.http.post<any>(this.newCreditLoanUrl, null, { headers }).subscribe(() => {
         resolve();
       }, ((error) => {
         reject(error);
