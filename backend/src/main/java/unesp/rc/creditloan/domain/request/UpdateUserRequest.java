@@ -7,6 +7,9 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotNull;
 
+/**
+ * Entidade UpdateUserRequest para armazenar os dados de usuário na requisição do serviço
+ */
 public class UpdateUserRequest {
 
     @NotNull

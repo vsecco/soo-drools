@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Classe que realiza a configuração do CORS (Controle de acesso HTTP)
+ */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class SimpleCorsFilter implements Filter {
@@ -17,6 +20,14 @@ public class SimpleCorsFilter implements Filter {
         //Nenhuma inicialização necessária no construtor
     }
 
+    /**
+     * Configura para permitir requisição de qualquer origem
+     * @param req
+     * @param res
+     * @param chain
+     * @throws IOException
+     * @throws ServletException
+     */
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException,
             ServletException {

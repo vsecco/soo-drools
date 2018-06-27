@@ -23,7 +23,7 @@ export class CrudService {
 
       let headers = new HttpHeaders();
       headers = headers.set('Content-Type', 'application/json');
-      headers = headers.set('Authorization', 'baerer' + sessionStorage.getItem('tokenDrools'));
+      headers = headers.set('Authorization', 'Bearer' + sessionStorage.getItem('tokenDrools'));
 
       this.http.put<any>(this.updateRegisterUrl, body, { headers }).subscribe(() => {
         resolve();
@@ -37,7 +37,7 @@ export class CrudService {
     return new Promise<any>((resolve, reject) => {
       let headers = new HttpHeaders();
       headers = headers.set('Content-Type', 'application/json');
-      headers = headers.set('Authorization', 'baerer' + sessionStorage.getItem('tokenDrools'));
+      headers = headers.set('Authorization', 'Bearer' + sessionStorage.getItem('tokenDrools').access_token);
 
       this.http.get<any>(this.getCreditLoanUrl, { headers }).subscribe((serverResponse) => {
         resolve(serverResponse);
@@ -52,7 +52,7 @@ export class CrudService {
 
       let headers = new HttpHeaders();
       headers = headers.set('Content-Type', 'application/json');
-      headers = headers.set('Authorization', 'baerer' + sessionStorage.getItem('tokenDrools'));
+      headers = headers.set('Authorization', 'Bearer' + sessionStorage.getItem('tokenDrools'));
 
       this.http.post<any>(this.newCreditLoanUrl, { headers }).subscribe(() => {
         resolve();

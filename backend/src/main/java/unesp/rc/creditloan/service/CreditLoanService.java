@@ -26,6 +26,10 @@ public class CreditLoanService {
     @Autowired
     UserService userService;
 
+    /**
+     * Método que realiza a criação de uma solicitação de limite de crédito
+     * Utiliza os dados do usuário logado para disparar as regras de negócio
+     */
     public void createCreditLoan() {
         User loggedUser = userService.getLoggedUser();
         User dbUser = userService.getDBUser(loggedUser.getCpf());

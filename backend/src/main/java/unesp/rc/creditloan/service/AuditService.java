@@ -25,6 +25,10 @@ public class AuditService {
     @Autowired
     public UserService userService;
 
+    /**
+     * Método que realiza a busca de solicitações de limite de crédito do usuário logado
+     * @return
+     */
     public AuditResponse getAudit() {
         User loggedUser = userService.getLoggedUser();
 
@@ -45,6 +49,11 @@ public class AuditService {
         return auditResponse;
     }
 
+    /**
+     * Método que realiza a criação de um histórico de solicitação de limite de crédito
+     * para o usuário logado
+     * @param creditLoan Limite de crédito
+     */
     public void createAudit(CreditLoan creditLoan) {
         User loggedUser = userService.getLoggedUser();
 
