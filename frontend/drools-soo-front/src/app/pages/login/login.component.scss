@@ -17,22 +17,18 @@
     justify-content: center;
 }
 
-.div-right {
-    padding: 00px;
-}
-
 img {
     height: 200px;
 }
 
 .div-form {
-    margin-left: 6vw;
-    padding-top: 20vh;
+    margin-left: 9vw;
+    padding-top: 10vh;
     width: 290px;
 }
 
 .btn-login{
-    margin-left: 6vw;
+    cursor: pointer;
     background-color: #c4e8e7;
     border-radius: .3em;
     color: #fff;
@@ -51,6 +47,13 @@ img {
 }
 
 .cadastrar {
-    margin-left: 6vw;
     cursor: pointer;
+}
+
+.div-logo {
+    margin-left: 15vw;
+}
+
+.div-img-logo {
+    margin-left: 11vw;
 }

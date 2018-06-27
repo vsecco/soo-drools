@@ -1,5 +1,8 @@
+import { RegisterModel } from './../../models/register.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginModel } from '../../models/login.model';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +11,21 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public credentials = {
-    login: '',
-    password: '',
-  };
+  public credentials = new LoginModel();
+  public register = new RegisterModel();
   public cadastre: boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private loginService: LoginService) { }
 
   ngOnInit() {
   }
 
   public login() {
-    this.router.navigate(['home']);
+    this.loginService.LoginUser(this.credentials).then((token) => {
+      sessionStorage.setItem('tokenDrools', token);
+      this.router.navigate(['home']);
+    });
   }
 
   public Cadastre() {
@@ -29,6 +34,9 @@ export class LoginComponent implements OnInit {
 
   public mostrarCadastre() {
     this.cadastre = !this.cadastre;
+  }
+
+  public cadastrar() {
   }
 
 }
