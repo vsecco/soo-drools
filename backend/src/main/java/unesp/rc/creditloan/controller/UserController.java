@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import unesp.rc.creditloan.domain.User;
+import unesp.rc.creditloan.domain.request.UpdateUserRequest;
 import unesp.rc.creditloan.service.UserService;
 
 import javax.validation.Valid;
@@ -24,11 +25,11 @@ public class UserController {
 
     /**
      * Endpoint que realiza a atualização dos dados do usuário logado
-     * @param user
+     * @param updateUserRequest
      */
     @PreAuthorize("hasAnyRole('ROLE_USER')")
     @RequestMapping(method = RequestMethod.PUT, path = "/update")
-    public void updateUser(@RequestBody @Valid final User user) {
-        this.userService.updateUser(user);
+    public void updateUser(@RequestBody @Valid final UpdateUserRequest updateUserRequest) {
+        this.userService.updateUser(updateUserRequest);
     }
 }
