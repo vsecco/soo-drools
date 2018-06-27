@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   public credentials = new LoginModel();
   public register = new RegisterModel();
   public cadastre: boolean;
+  public civilStatusList = ['SINGLE', 'MARRIED', 'DIVORCED', 'WIDOWER'];
 
   constructor(private router: Router,
               private loginService: LoginService,
@@ -51,4 +52,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  public showListCivilStatus(e) {
+    this.register.CivilStatus = e;
+  }
 }

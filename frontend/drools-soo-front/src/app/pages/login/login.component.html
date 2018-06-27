@@ -39,9 +39,16 @@
                 <br />
                 <input type="text" class="form-control" [(ngModel)]="register.bithday" mask='0000-00-00' placeholder="Data de nascimento"/>
                 <br />
-                <input type="text" class="form-control" [(ngModel)]="register.amount" placeholder="Valor total de bens"/>
+                <input type="number" class="form-control" [(ngModel)]="register.amount" placeholder="Valor total de bens"/>
                 <br />
-                <input type="text" class="form-control" [(ngModel)]="register.civilStatus" placeholder="Estado Civil"/>
+                <div>
+                    <label style="margin-right: 1vw;">Estado Civíl:</label>
+                    <select class="modified-select" (change)="showListCivilStatus($event.target.value)">
+                        <option *ngFor="let civilStatus of civilStatusList" value={{civilStatus}}>
+                            {{civilStatus}}
+                        </option>
+                    </select>
+                </div>
                 <br />
                 <input type="password" class="form-control" [(ngModel)]="register.password" placeholder="Senha"/>
                 <br />
