@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     this.crudService.UpdateUser(this.userUpdate).then(() => {
       this.crudService.newCreditLoan().then(() => {
         this.crudService.getCreditLoan().then((serverResponse) => {
-          this.listOfBudgets = serverResponse;
+          this.listOfBudgets = serverResponse.creditLoanList;
           this.openWindowNewBudget();
           window.scrollTo(0, 0);
         });
