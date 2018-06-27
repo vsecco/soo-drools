@@ -1,0 +1,73 @@
+.header {
+  background: none repeat scroll 0 0 #0891ad;
+  max-height: 60px;
+}
+.info {
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.user-data {
+  color: #fff;
+  font-size: .75rem;
+  font-weight: bold;
+  letter-spacing: -.1px;
+  padding-top: 1.7vh;
+}
+
+.navbar {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.row {
+  width: 100%;
+}
+
+.img-responsive {
+  padding-top: 2.5vh;
+}
+
+.title {
+  padding-top: 2.9vh;
+  padding-left: 6vw;
+  color: #fff;
+}
+
+.icon-menu-header {
+  padding-top: 2.4vh;
+}
+
+.dropdown-toggle:hover {
+  color: #fff;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  float: right;
+  text-align: center;
+  width: 40%;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.fa-ellipsis-v {
+  font-size: 1.7rem;
+}
+
+.icon-dropdown-menu {
+  color: #0891ad;
+}
+
+.dropdown-item:active {
+  background-color: #f7f7f9;
+  color: #342f33;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+

@@ -22,10 +22,11 @@ export class LoginComponent implements OnInit {
   }
 
   public login() {
-    this.loginService.LoginUser(this.credentials).then((token) => {
-      sessionStorage.setItem('tokenDrools', token);
-      this.router.navigate(['home']);
-    });
+    // this.loginService.LoginUser(this.credentials).then((token) => {
+    //   sessionStorage.setItem('tokenDrools', token);
+    //   this.router.navigate(['home']);
+    // });
+    this.router.navigate(['home']);
   }
 
   public Cadastre() {

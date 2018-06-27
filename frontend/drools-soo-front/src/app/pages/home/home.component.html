@@ -1,3 +1,52 @@
-<p>
-  home works!
-</p>
+<app-header></app-header>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <div class="title-home">Veja seus orçamentos à seguir!</div>
+    <div class="card text-white mb-3 card-color">
+        <div class="card-header">Orçamento do dia: 21/01/2011</div>
+        <div class="card-body">
+          <h5 class="card-title">Limite de crédito: R$100,00</h5>
+          <h5 class="card-title text-right">Sua situaçao na época:</h5>
+          <p class="card-text text-right">Estado civíl: Solteiro</p>
+          <p class="card-text text-right">Total de bens: R$1000,00</p>
+        </div>
+    </div>
+    <div class="card text-white mb-3 card-color">
+        <div class="card-header">Orçamento do dia: 21/01/2011</div>
+        <div class="card-body">
+          <h5 class="card-title">Limite de crédito: R$100,00</h5>
+          <h5 class="card-title text-right">Sua situaçao na época:</h5>
+          <p class="card-text text-right">Estado civíl: Solteiro</p>
+          <p class="card-text text-right">Total de bens: R$1000,00</p>
+        </div>
+    </div>
+    <div class="title-home">Faça um novo orçamento!</div>
+    <div class="form-group d-inline">
+      <button (click)="abrirJanelaNovoOrcamento()" class="btn btn-login">
+          <div class="float-left text-left">Pedir novo Orçamento</div>
+          <div class="text-right">
+              <em class="fa fa-arrow-right"></em>
+          </div>
+      </button>
+    </div>
+    <!-- essa div só será mostrada quando clicar no novoorcamento -->
+    <div class="card border-card-color mb-3">
+        <div class="card-body text-dark">
+            <input type="text" class="form-control" placeholder="Valor total de bens"/>
+            <br />
+            <input type="text" class="form-control" placeholder="Estado Civil"/>
+            <div class="form-group">
+                <button (click)="novoOrcamento()" class="btn btn-full">
+                    <div class="float-left text-left">ENVIAR</div>
+                    <div class="text-right">
+                        <em class="fa fa-arrow-right"></em>
+                    </div>
+                </button>
+              </div>
+        </div>
+      </div>
+  </div>
+  <!-- ao enviar um novo orcamento, fazer o put e depois o get e entao subir a tela até o inicio -->
+  <div class="col-2"></div>
+</div>

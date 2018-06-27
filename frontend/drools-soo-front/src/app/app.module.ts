@@ -8,12 +8,14 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
+    HeaderComponent,
   ],
   imports: [
     NgbModule.forRoot(),
