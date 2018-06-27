@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
               private crudService: CrudService) { }
 
   ngOnInit() {
+    this.register.CivilStatus = this.civilStatusList[0];
   }
 
   public login() {
