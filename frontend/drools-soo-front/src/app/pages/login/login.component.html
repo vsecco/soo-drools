@@ -37,13 +37,13 @@
                 <br />
                 <input type="number" class="form-control" [(ngModel)]="register.cpf" placeholder="cpf"/>
                 <br />
-                <input type="text" class="form-control" [(ngModel)]="register.bithday" placeholder="Data de nascimento"/>
+                <input type="text" class="form-control" [(ngModel)]="register.bithday" mask='0000-00-00' placeholder="Data de nascimento"/>
                 <br />
                 <input type="text" class="form-control" [(ngModel)]="register.amount" placeholder="Valor total de bens"/>
                 <br />
                 <input type="text" class="form-control" [(ngModel)]="register.civilStatus" placeholder="Estado Civil"/>
                 <br />
-                <input type="text" class="form-control" [(ngModel)]="register.password" placeholder="Senha"/>
+                <input type="password" class="form-control" [(ngModel)]="register.password" placeholder="Senha"/>
                 <br />
                 <div *ngIf="Cadastre()" class="form-group float-left">
                     <button (click)="cadastrar()" class="btn btn-login">

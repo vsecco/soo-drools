@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-
+import {NgxMaskModule} from 'ngx-mask';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
@@ -19,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     NgbModule.forRoot(),
+    NgxMaskModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
