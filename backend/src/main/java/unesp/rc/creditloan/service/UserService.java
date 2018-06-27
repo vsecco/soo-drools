@@ -7,6 +7,7 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Service;
 import unesp.rc.creditloan.domain.CustomPrincipal;
 import unesp.rc.creditloan.domain.User;
+import unesp.rc.creditloan.domain.request.UpdateUserRequest;
 import unesp.rc.creditloan.exception.BadRequestException;
 import unesp.rc.creditloan.exception.ConflictException;
 import unesp.rc.creditloan.exception.NotFoundException;
@@ -31,20 +32,15 @@ public class UserService {
         }
     }
 
-    public void updateUser(User user) {
-        if(!this.getLoggedUser().getCpf().equals(user.getCpf())) {
-            throw new BadRequestException("Não é permitido alterar o CPF");
-        }
+    public void updateUser(UpdateUserRequest user) {
+        User loggedUser = this.getLoggedUser();
 
-        User userDB = userRepository.findByCpf(user.getCpf());
-        if(userDB != null) {
-            user.setId(userDB.getId());
-            user.setPassword(StringEncoder.encodeString(user.getPassword()));
-            userRepository.save(user);
-            this.setLoggedUser(user);
-        } else {
-            throw new NotFoundException("Usuário não encontrado");
-        }
+        User userDB = userRepository.findByCpf(loggedUser.getCpf());
+        userDB.setCivilStatus(user.getCivilStatus());
+        userDB.setAmountOfProperty(user.getAmountOfProperty());
+
+        userRepository.save(userDB);
+        this.setLoggedUser(userDB);
     }
 
     public User getDBUser(String cpf) {
