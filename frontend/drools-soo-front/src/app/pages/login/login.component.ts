@@ -28,7 +28,13 @@ export class LoginComponent implements OnInit {
     this.loginService.LoginUser(this.credentials).then((token) => {
       sessionStorage.setItem('tokenDrools', token.access_token);
       this.router.navigate(['home']);
-    });
+    }).catch(((error) => {
+      let message = 'Ocorreu um erro inesperado';
+      if (error.status === 409) {
+          message = error.message;
+      }
+      alert(message);
+    }));
   }
 
   public Cadastre() {
@@ -49,7 +55,13 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['home']);
         });
       });
-    });
+    }).catch(((error) => {
+      let message = 'Ocorreu um erro inesperado';
+      if (error.status === 409) {
+          message = error.message;
+      }
+      alert(message);
+    }));
   }
 
   public showListCivilStatus(e) {

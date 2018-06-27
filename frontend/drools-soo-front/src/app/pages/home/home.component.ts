@@ -18,7 +18,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.crudService.getCreditLoan().then((serverResponse) => {
       this.listOfBudgets = serverResponse.creditLoanList;
-    });
+    }).catch(((error) => {
+      let message = 'Ocorreu um erro inesperado';
+      if (error.status === 409) {
+          message = error.message;
+      }
+      alert(message);
+    }));
   }
 
   openWindowNewBudget() {
@@ -38,6 +44,12 @@ export class HomeComponent implements OnInit {
           window.scrollTo(0, 0);
         });
       });
-    });
+    }).catch(((error) => {
+      let message = 'Ocorreu um erro inesperado';
+      if (error.status === 409) {
+          message = error.message;
+      }
+      alert(message);
+    }));
   }
 }
