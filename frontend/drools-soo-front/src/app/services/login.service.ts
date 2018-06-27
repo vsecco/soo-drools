@@ -20,10 +20,14 @@ export class LoginService {
       };
 
       let headers = new HttpHeaders();
-      headers = headers.set('Content-Type', 'application/json');
+      headers = headers.set('Content-Type', 'application/x-www-form-urlencoded');
       headers = headers.set('Authorization', 'Basic Y3JlZGl0LWxvYW46c2VjcmV0');
 
-      this.http.post<any>(this.loginUrl, body, { headers }).subscribe((serverResponse) => {
+      const searchParams = Object.keys(body).map((key) => {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(body[key]);
+      }).join('&');
+
+      this.http.post<any>(this.loginUrl, searchParams, { headers }).subscribe((serverResponse) => {
         resolve(serverResponse);
       }, ((error) => {
         reject(error);

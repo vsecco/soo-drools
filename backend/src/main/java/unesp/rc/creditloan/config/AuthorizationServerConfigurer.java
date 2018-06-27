@@ -59,6 +59,5 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
         if (this.userDetailsService != null) {
             endpoints.userDetailsService(this.userDetailsService);
         }
-
     }
 }
