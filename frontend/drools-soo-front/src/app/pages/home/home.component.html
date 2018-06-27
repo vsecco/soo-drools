@@ -25,7 +25,14 @@
         <div class="card-body text-dark">
             <input type="text" class="form-control" [(ngModel)]="userUpdate.amount" placeholder="Valor total de bens"/>
             <br />
-            <input type="text" class="form-control" [(ngModel)]="userUpdate.civilStatus" placeholder="Estado Civil"/>
+            <div>
+                <label style="margin-right: 1vw;">Estado Civíl:</label>
+                <select class="modified-select" (change)="showListCivilStatus($event.target.value)">
+                    <option *ngFor="let civilStatus of civilStatusList" value={{civilStatus}}>
+                        {{civilStatus}}
+                    </option>
+                </select>
+            </div>
             <div class="form-group">
                 <button (click)="newBudget()" class="btn btn-full">
                     <div class="float-left text-left">ENVIAR</div>

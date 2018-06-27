@@ -12,10 +12,12 @@ export class HomeComponent implements OnInit {
   public budget: boolean;
   public userUpdate = new RegisterModel();
   public listOfBudgets;
+  public civilStatusList = ['SINGLE', 'MARRIED', 'DIVORCED', 'WIDOWER'];
 
   constructor(private crudService: CrudService) { }
 
   ngOnInit() {
+    this.userUpdate.CivilStatus = this.civilStatusList[0];
     this.crudService.getCreditLoan().then((serverResponse) => {
       this.listOfBudgets = serverResponse.creditLoanList;
     }).catch(((error) => {
@@ -43,5 +45,9 @@ export class HomeComponent implements OnInit {
     }).catch(((error) => {
       alert('Ocorreu um erro inesperado');
     }));
+  }
+
+  public showListCivilStatus(e) {
+    this.userUpdate.CivilStatus = e;
   }
 }
