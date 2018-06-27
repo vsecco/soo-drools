@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   public login() {
     this.loginService.LoginUser(this.credentials).then((token) => {
-      sessionStorage.setItem('tokenDrools', token);
+      sessionStorage.setItem('tokenDrools', token.access_token);
       this.router.navigate(['home']);
     });
   }
