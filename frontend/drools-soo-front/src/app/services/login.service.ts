@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginModel } from '../models/login.model';
+import { SELECT_VALUE_ACCESSOR } from '@angular/forms/src/directives/select_control_value_accessor';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,9 @@ export class LoginService {
         grant_type: 'password',
       };
 
-      const headers = new HttpHeaders();
-      headers.set('Content-Type', 'application/json');
+      let headers = new HttpHeaders();
+      headers = headers.set('Content-Type', 'application/json');
+      headers = headers.set('Authorization', 'Basic Y3JlZGl0LWxvYW46c2VjcmV0');
 
       this.http.post<any>(this.loginUrl, body, { headers }).subscribe((serverResponse) => {
         resolve(serverResponse);
