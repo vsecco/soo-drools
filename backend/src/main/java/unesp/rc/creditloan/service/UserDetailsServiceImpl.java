@@ -19,6 +19,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * Método que realiza a busca de um usuário no repositório e retorna um objeto Principal
+     * preenchido com CPF, senha, perfil e objeto User
+     * @param username CPF
+     * @return
+     */
     @Override
     public UserDetails loadUserByUsername(String username) {
 

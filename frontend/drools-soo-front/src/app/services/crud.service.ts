@@ -70,11 +70,12 @@ export class CrudService {
       const body = {
         name: registerModel.Name,
         cpf: registerModel.Cpf,
-        birthdate: registerModel.Bithday,
+        birthdate: registerModel.Birthday,
         civilStatus: registerModel.CivilStatus,
         amountOfProperty: registerModel.Amount,
         password: registerModel.Password,
       };
+
 
       this.http.post<any>(this.registerUserUrl, body, { headers }).subscribe(() => {
         resolve();

@@ -8,9 +8,7 @@ import org.springframework.stereotype.Service;
 import unesp.rc.creditloan.domain.CustomPrincipal;
 import unesp.rc.creditloan.domain.User;
 import unesp.rc.creditloan.domain.request.UpdateUserRequest;
-import unesp.rc.creditloan.exception.BadRequestException;
 import unesp.rc.creditloan.exception.ConflictException;
-import unesp.rc.creditloan.exception.NotFoundException;
 import unesp.rc.creditloan.repository.UserRepository;
 import unesp.rc.creditloan.utils.StringEncoder;
 
@@ -23,6 +21,10 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
+    /**
+     * Método que realiza a criação de um novo usuário
+     * @param user
+     */
     public void createUser(User user) {
         if(userRepository.findByCpf(user.getCpf()) == null) {
             user.setPassword(StringEncoder.encodeString(user.getPassword()));
@@ -32,6 +34,10 @@ public class UserService {
         }
     }
 
+    /**
+     * Método que realiza a atualização de alguns dados do usuário logado
+     * @param user
+     */
     public void updateUser(UpdateUserRequest user) {
         User loggedUser = this.getLoggedUser();
 
@@ -43,13 +49,18 @@ public class UserService {
         this.setLoggedUser(userDB);
     }
 
+    /**
+     * Método que busca o usuário do banco de dados a partir do CPF
+     * @param cpf
+     * @return
+     */
     public User getDBUser(String cpf) {
         return userRepository.findByCpf(cpf);
     }
 
 
     /**
-     * Recupera o usuário logado
+     * Recupera o usuário logado da sessão
      *
      * @return User
      */
