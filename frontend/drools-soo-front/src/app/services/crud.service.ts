@@ -37,7 +37,7 @@ export class CrudService {
     return new Promise<any>((resolve, reject) => {
       let headers = new HttpHeaders();
       headers = headers.set('Content-Type', 'application/json');
-      headers = headers.set('Authorization', 'Bearer' + sessionStorage.getItem('tokenDrools').access_token);
+      headers = headers.set('Authorization', 'Bearer' + sessionStorage.getItem('tokenDrools'));
 
       this.http.get<any>(this.getCreditLoanUrl, { headers }).subscribe((serverResponse) => {
         resolve(serverResponse);
