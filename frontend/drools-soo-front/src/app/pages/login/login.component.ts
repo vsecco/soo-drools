@@ -1,3 +1,4 @@
+import { CrudService } from './../../services/crud.service';
 import { RegisterModel } from './../../models/register.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   public cadastre: boolean;
 
   constructor(private router: Router,
-              private loginService: LoginService) { }
+              private loginService: LoginService,
+              private crudService: CrudService) { }
 
   ngOnInit() {
   }
@@ -37,6 +39,16 @@ export class LoginComponent implements OnInit {
   }
 
   public cadastrar() {
+    this.crudService.registerUser(this.register).then(() => {
+      this.credentials.Login = this.register.Cpf;
+      this.credentials.Password = this.register.Password;
+      this.crudService.newCreditLoan().then(() => {
+        this.loginService.LoginUser(this.credentials).then((token) => {
+          sessionStorage.setItem('tokenDrools', token);
+          this.router.navigate(['home']);
+        });
+      });
+    });
   }
 
 }
