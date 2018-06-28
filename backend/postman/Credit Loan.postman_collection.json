@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Credit Loan",
-		"_postman_id": "36506186-2988-0561-0279-1f9e018a4118",
+		"_postman_id": "f6f294ef-05dd-a9b9-5597-1080b7a653fc",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -19,7 +19,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
@@ -63,7 +66,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Larissa R R\"\n\t,\"cpf\": \"12345678\"\n\t,\"birthdate\": \"1994-04-02\"\n\t,\"amountOfProperty\": 1000\n\t,\"civilStatus\": \"MARRIED\"\n\t,\"password\": \"BLA\"\n}"
+					"raw": "{ \"amountOfProperty\": 500\n\t,\"civilStatus\": \"SINGLE\"\n}"
 				},
 				"description": ""
 			},
@@ -129,7 +132,7 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "12345678",
+							"value": "123456789",
 							"description": "",
 							"type": "text"
 						},
