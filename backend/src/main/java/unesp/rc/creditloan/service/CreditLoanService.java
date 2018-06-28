@@ -15,16 +15,16 @@ import java.util.Date;
 public class CreditLoanService {
 
     @Autowired
-    RuleEngineService ruleEngineService;
+    private RuleEngineService ruleEngineService;
 
     @Autowired
-    AuditService auditService;
+    private AuditService auditService;
 
     @Autowired
-    CreditLoanRepository creditLoanRepository;
+    private CreditLoanRepository creditLoanRepository;
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     /**
      * Método que realiza a criação de uma solicitação de limite de crédito

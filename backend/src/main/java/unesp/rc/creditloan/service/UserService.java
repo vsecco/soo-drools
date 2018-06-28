@@ -19,7 +19,7 @@ import unesp.rc.creditloan.utils.StringEncoder;
 public class UserService {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     /**
      * Método que realiza a criação de um novo usuário

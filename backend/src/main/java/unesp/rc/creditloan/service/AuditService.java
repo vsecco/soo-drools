@@ -20,10 +20,10 @@ import java.util.List;
 public class AuditService {
 
     @Autowired
-    public AuditRepository auditRepository;
+    private AuditRepository auditRepository;
 
     @Autowired
-    public UserService userService;
+    private UserService userService;
 
     /**
      * Método que realiza a busca de solicitações de limite de crédito do usuário logado
