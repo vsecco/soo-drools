@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
   constructor(private crudService: CrudService) { }
 
   ngOnInit() {
-    this.userUpdate.CivilStatus = this.civilStatusList[0];
     this.crudService.getCreditLoan().then((serverResponse) => {
       this.listOfBudgets = serverResponse.creditLoanList;
     }).catch(((error) => {
@@ -26,6 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   openWindowNewBudget() {
+    this.userUpdate.CivilStatus = this.civilStatusList[0];
     this.budget = !this.budget;
   }
 
