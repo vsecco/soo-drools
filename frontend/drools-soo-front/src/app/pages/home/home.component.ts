@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.crudService.getCreditLoan().then((serverResponse) => {
       this.listOfBudgets = serverResponse.creditLoanList;
     }).catch(((error) => {
-      alert('Ocorreu um erro inesperado');
+      alert('Ocorreu um erro inesperado.');
     }));
   }
 
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
         });
       });
     }).catch(((error) => {
-      alert('Ocorreu um erro inesperado');
+      alert('Ocorreu um erro inesperado.');
     }));
   }
 

@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('tokenDrools', token.access_token);
       this.router.navigate(['home']);
     }).catch(((error) => {
-      let message = 'Ocorreu um erro inesperado';
+      let message = 'Ocorreu um erro inesperado.';
       if (error.status === 400) {
-          message = 'Usuário ou senha inválidos';
+          message = 'Usuário ou senha inválidos.';
       }
       alert(message);
     }));
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         });
       });
     }).catch(((error) => {
-      let message = 'Ocorreu um erro inesperado';
+      let message = 'Ocorreu um erro inesperado.';
       if (error.status === 409) {
           message = 'O CPF digitado já está cadastrado.';
       }
